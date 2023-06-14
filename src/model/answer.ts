@@ -20,5 +20,4 @@ export default class AnswerModel {
   get revealed() {
     return this.#revealed
   }
-  
 }
