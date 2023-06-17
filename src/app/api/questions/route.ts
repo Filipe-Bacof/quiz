@@ -12,7 +12,7 @@ export const GET = (req: NextRequest, res: NextResponse) => {
     )
 
     if (questionByIdOrNothing.length === 1) {
-      const selectedQuestion = questionByIdOrNothing[0]
+      const selectedQuestion = questionByIdOrNothing[0].shuffleAnswers()
       return NextResponse.json({
         status: 200,
         body: selectedQuestion.convertToObject(),
