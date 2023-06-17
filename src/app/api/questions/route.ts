@@ -7,6 +7,6 @@ export const GET = (req: NextRequest, res: NextResponse) => {
   // const id = searchParams.get('id')
   return NextResponse.json({
     status: 200,
-    body: questions[0],
+    body: questions[0].convertToObject(),
   })
 }
