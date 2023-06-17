@@ -42,6 +42,16 @@ export default class QuestionModel {
     return false
   }
 
+  replyWith(index: number): QuestionModel {
+    const attain = this.#answers[index]?.correct
+    const answers = this.#answers.map((answer, i) => {
+      const selectedAnswer = index === i
+      const mustReveal = selectedAnswer || answer.correct
+      return mustReveal ? answer.reveal() : answer
+    })
+    return new QuestionModel(this.#id, this.#enunciation, answers, attain)
+  }
+
   shuffleAnswers(): QuestionModel {
     const shuffledAnswers = shuffle(this.#answers)
     return new QuestionModel(
@@ -56,8 +66,9 @@ export default class QuestionModel {
     return {
       id: this.#id,
       enunciation: this.#enunciation,
-      answers: this.#answers.map((ans) => ans.convertToObject()),
+      answered: this.answered,
       attain: this.#attain,
+      answers: this.#answers.map((ans) => ans.convertToObject()),
     }
   }
 }
