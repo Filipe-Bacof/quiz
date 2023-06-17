@@ -3,10 +3,18 @@ export default class AnswerModel {
   #correct: boolean
   #revealed: boolean
 
-  constructor(value: string, correct: boolean, revealed: false) {
+  constructor(value: string, correct: boolean, revealed = false) {
     this.#value = value
     this.#correct = correct
     this.#revealed = revealed
+  }
+
+  static right(value: string) {
+    return new AnswerModel(value, true)
+  }
+
+  static wrong(value: string) {
+    return new AnswerModel(value, false)
   }
 
   get value() {
