@@ -11,10 +11,10 @@ export default function Answer(props: AnswerProps) {
   const answer = props.value
 
   return (
-    <div className="flex">
-      <div className="">
+    <div className="width-[80%] m-[10px] flex h-[100px] min-w-[500px]">
+      <div className="relative flex flex-1">
         {/* front */}
-        <div className="flex items-center rounded-lg bg-white p-[15px] text-black">
+        <div className="absolute flex h-full w-full items-center rounded-lg bg-white p-[15px] text-black">
           <div
             className={`${props.letterBgColor} mr-[20px] flex h-[40px] w-[40px] items-center justify-center rounded-full text-[1.3rem] font-bold`}
           >
@@ -25,7 +25,7 @@ export default function Answer(props: AnswerProps) {
           </div>
         </div>
         {/* back */}
-        <div className="flex "></div>
+        <div className="absolute flex h-full w-full"></div>
       </div>
     </div>
   )

@@ -24,7 +24,7 @@ export default function Question(props: QuestionProps) {
   }
 
   return (
-    <div className="flex h-[100vh] flex-col items-center justify-center">
+    <div className="flex h-[100vh] flex-col items-center">
       <Enunciation text={question.enunciation} />
       {renderAnswers()}
     </div>
