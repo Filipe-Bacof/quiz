@@ -5,13 +5,17 @@ interface AnswerProps {
   index: number
   letter: string
   letterBgColor: string
+  answerProvided: (index: number) => void
 }
 
 export default function Answer(props: AnswerProps) {
   const answer = props.value
 
   return (
-    <div className="width-[80%] m-[10px] flex h-[100px] min-w-[500px]">
+    <div
+      onClick={() => props.answerProvided(props.index)}
+      className="width-[80%] m-[10px] flex h-[100px] min-w-[500px]"
+    >
       <div className="relative flex flex-1">
         {/* front */}
         <div className="absolute flex h-full w-full items-center rounded-lg bg-white p-[15px] text-black">
