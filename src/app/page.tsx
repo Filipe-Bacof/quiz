@@ -1,3 +1,5 @@
+'use client'
+
 import Question from '@/components/Question'
 import AnswerModel from '@/model/answer'
 import QuestionModel from '@/model/question'
