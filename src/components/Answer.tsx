@@ -16,7 +16,7 @@ export default function Answer(props: AnswerProps) {
         {/* front */}
         <div className="absolute flex h-full w-full items-center rounded-lg bg-white p-[15px] text-black">
           <div
-            className={`${props.letterBgColor} mr-[20px] flex h-[40px] w-[40px] items-center justify-center rounded-full text-[1.3rem] font-bold`}
+            className={`${props.letterBgColor} mr-[20px] flex h-[40px] w-[40px] items-center justify-center rounded-full text-[1.3rem] font-bold text-white`}
           >
             {props.letter}
           </div>

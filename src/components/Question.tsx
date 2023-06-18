@@ -2,6 +2,13 @@ import QuestionModel from '@/model/question'
 import Enunciation from './Enunciation'
 import Answer from './Answer'
 
+const letters = [
+  { value: 'A', color: 'bg-yellow-300' },
+  { value: 'B', color: 'bg-pink-400' },
+  { value: 'C', color: 'bg-cyan-300' },
+  { value: 'D', color: 'bg-green-300' },
+]
+
 interface QuestionProps {
   value: QuestionModel
 }
@@ -16,8 +23,8 @@ export default function Question(props: QuestionProps) {
           key={i}
           value={answer}
           index={i}
-          letter="A"
-          letterBgColor="bg-yellow-500"
+          letter={letters[i].value}
+          letterBgColor={letters[i].color}
         />
       )
     })
